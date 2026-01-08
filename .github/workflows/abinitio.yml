@@ -15,6 +15,7 @@ jobs:
           test -d transforms
           test -d params
           test -d data/input
+          test -d scripts
       - name: create package
         run: |
           mkdir -p build
