@@ -10,12 +10,23 @@ jobs:
         uses: actions/checkout@v4
       - name: validate folders
         run: |
-          test -d graphs
-          test -d layouts
-          test -d transforms
-          test -d params
-          test -d data/input
-          test -d scripts
+         echo "checking requieed folder"
+         for dir in graphs layouts transforms params data/
+         input scripts; do
+         if [ ! -d "$dir" ]; then
+         echo " missing folder: $dir"
+         exit 1
+         else 
+         echo "found folder: $dir"
+         fi
+         done
+        # |
+        #   test -d graphs
+        #   test -d layouts
+        #   test -d transforms
+        #   test -d params
+        #   test -d data/input
+        #   test -d scripts
       - name: create package
         run: |
           mkdir -p build
