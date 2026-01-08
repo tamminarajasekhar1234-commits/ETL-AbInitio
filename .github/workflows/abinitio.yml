@@ -12,7 +12,7 @@ jobs:
         run: |
          echo "checking requieed folder"
          Req="graphs layouts transforms params data/
-         input scripts"
+         input.dat scripts"
          for dir in $Req; do
          if [ ! -d "$dir" ]; then
          echo " missing folder: $dir"
