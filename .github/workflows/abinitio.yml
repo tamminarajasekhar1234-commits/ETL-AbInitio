@@ -32,8 +32,8 @@ jobs:
           mkdir -p build
           tar -czf build/abinitio-etl-poc.tar.gz \
             graphs \
-            layots \
-            tranforms \
+            layouts \
+            transforms \
             params \
             data \
             scripts \
