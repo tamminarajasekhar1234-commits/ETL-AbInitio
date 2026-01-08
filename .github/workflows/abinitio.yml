@@ -11,8 +11,7 @@ jobs:
       - name: validate folders
         run: |
          echo "checking requieed folder"
-         Req="graphs layouts transforms params data/
-         input.dat scripts"
+         Req="graphs layouts transforms params data scripts"
          for dir in $Req; do
          if [ ! -d "$dir" ]; then
          echo " missing folder: $dir"
