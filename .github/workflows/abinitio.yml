@@ -1,0 +1,33 @@
+name: ETL abinitio
+on:
+ push:
+   branches: [ "main"]
+jobs: 
+  pacakes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: validate folders
+        run: |
+          test -d graphs
+          test -d layouts
+          test -d transforms
+          test -d params
+          test -d data/input
+      - name: create package
+        run: |
+          mkdir -p build
+          tar -czf build/abinitio-etl-poc.tar.gz \
+            graphs \
+            layots \
+            tranforms \
+            params \
+            data \
+            scripts \
+      - name: upload etl package
+        uses: action/upload-artifact@v4
+        with:
+          name: adinitio-etl-poc
+          path: build//abinitio-etl-poc.tar.gz 
+          
