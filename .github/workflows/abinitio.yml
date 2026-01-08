@@ -37,9 +37,9 @@ jobs:
             params \
             data \
             scripts \
-      - name: upload etl package
-        uses: action/upload-artifact@v4
-        with:
-          name: adinitio-etl-poc
-          path: build/abinitio-etl-poc.tar.gz 
+      # - name: upload etl package
+      #   uses: action/upload-artifact@v4
+      #   with:
+      #     name: adinitio-etl-poc
+      #     path: build/abinitio-etl-poc.tar.gz 
           
